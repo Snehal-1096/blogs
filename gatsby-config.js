@@ -17,10 +17,9 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1338`,
+        apiURL: `http://localhost:1337`,
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
-            `articles`,
-            // `users`
+            `articles`
         ],
         queryLimit: 1000,
       },
@@ -39,14 +38,5 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // `gatsby-plugin-gatsby-cloud`,
-    // {
-    //   resolve: "gatsby-source-graphql",
-    //   options: {
-    //     typeName: "Strapi",
-    //     fieldName: "strapi",
-    //     url: `${process.env.GATSBY_STRAPI_URL || 'http://localhost:1338'}/graphql`,
-    //   },
-    // },
   ],
 }

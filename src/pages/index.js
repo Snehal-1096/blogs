@@ -1,12 +1,10 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Img from "gatsby-image"
 
 const IndexPage = ({ data }) => {
-  console.log("IndexPage", data)
   return (
     <Layout>
       <Seo title="Home" />
@@ -15,7 +13,7 @@ const IndexPage = ({ data }) => {
       <p>Now go build something great.</p>
 
       {data.allStrapiArticles.nodes.map((item, index) => (
-        <li>
+        <li key={index}>
           <h2>{item.title}</h2>
           <Img fixed={item.image.childImageSharp.fixed} />
           <p>{item.content}</p>
