@@ -14,6 +14,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1338`,
+        contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
+            `articles`,
+            // `users`
+        ],
+        queryLimit: 1000,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -28,9 +39,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // `gatsby-plugin-gatsby-cloud`,
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     typeName: "Strapi",
+    //     fieldName: "strapi",
+    //     url: `${process.env.GATSBY_STRAPI_URL || 'http://localhost:1338'}/graphql`,
+    //   },
+    // },
   ],
 }
